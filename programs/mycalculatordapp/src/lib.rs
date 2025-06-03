@@ -38,7 +38,7 @@ pub mod mycalculatordapp {
     pub fn divide(ctx: Context<Division>, num1: i64, num2: i64) -> Result<()> {
         let calculator = &mut ctx.accounts.calculator;
         calculator.result = num1 / num2;
-        calculator.remainder = 0;
+        calculator.remainder = num1 % num2;
         Ok(())
     }
 }
